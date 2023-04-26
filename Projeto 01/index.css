@@ -1,0 +1,83 @@
+body, #footer {
+    
+    font-family: 'Open Sans', sans-serif;
+    Font-size: 14px; /*Novamente, apesar de eu configurar todo bloco body com essa conte-size e line-height, o grau de expecificidade dos elementos internos
+    desse bloco (como h1 e h1 span), fazem com que eles não sejam alterados.
+    Eu poderia ter aplicado essas alterações na tag p ou no id paragrafos que eu criei, pois funcionaria igual e seria mais organizado. Porem, fiz dessa formas justamente
+    para reforçar a ideia de expecificidade e cascata*/
+    Line-height: 28px;
+    text-align: center; /*Essa tag sozinha vai centralizar não só os elementos do bloco em  questão, mas tambem de midias e outros bloco seguintes*/
+    margin: 0; /*Essa margem foi para zerar os 8px de o navegar coloca por padrão entre o corpo e a barra de favoritos*/
+}
+
+div#hero {
+
+    width: 592px; /*Aqui foi estabelecido a largura total do bloco, que antes era 100% da página por padrão*/
+    margin: 0 auto 72px; /*Essa tag no modo auto com o center alight, compensa as boradas e recentraliza o bloco
+    A lógica da sequência de personalização de margens é a seguinte: top, self.right, bottom.
+    Se for colocado 4 parametros, eles seguem uma ordem de relógio/clockwise: top,right,bottom,left*/
+}
+
+#hero img {
+
+    margin-bottom: 72px;
+}
+
+h1 {
+    
+    font-family: 'Inter', sans-serif; /*Apesar do body incluir o h1, pelo nivel de expecificidade do elemento a fonte passa a ser Inter*/
+    Font-size: 49px;
+    Line-height: 56px;
+    font-weight: normal;
+    margin-bottom: 32px;
+}
+
+h1 span {
+   
+    font-weight: bold; /*Apesar do h1 definir a fonte como normal, pelo nivel de expecificidade do elemento a fonte passa a ser bold
+    
+    Na realidade, como eu defini o bold lá no código html, esse trecho nem seria necessario*/
+}
+
+p {
+
+    color: #7D7987;
+}
+
+span.marked_text, a {
+
+    font-family: 'Open Sans', sans-serif;
+    color: #FF9900;
+}
+
+#footer {
+
+    margin-bottom: 33px;
+}
+
+#footer #line {
+
+    width: 568px;
+    height: 0px;
+    border: 1px solid rgb(214, 214, 214);
+    margin: 0 auto 8px;
+}
+
+#footer a + a { 
+
+    margin-left: 28px; /*A ideia desse método é que o estilo será aplicado somente para o(s) a(s) que anteriores a eles, tenha um a. Ou seja, se o segundo a tiver um a
+    anterior, será aplicado, e se houver um terceiro a, o a anterior vai ser o segundo, tambem validando a condição.
+
+    Outra forma de exemplificar: #footer p + a{}. Isso significa que o estilo só será aplicado ao(s) a(s) que anteriores a eles, tenha um p
+    
+    Daria para fazer aplicando 14px em ambas as laterais tambem, o resultado é praticamente o mesmo*/
+
+    /*Aqui será feito o espaço entre os a's, da forma correta, sem o uso de &nbsp*/
+}
+
+#balls_image {
+    
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+}
